@@ -1,0 +1,18 @@
+<h2>Beneficiados</h2>
+<hr>
+
+<div class="row">
+  <div class="col">
+    <!-- SearchBox -->
+    <!-- (onValue)="searchByCapital($event)" -->
+    <shared-search-box (onDebounce)="searchAportantes($event)" placeholder="Buscar beneficiado"></shared-search-box>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+    <hr>
+    <!-- <shared-loading-spinner *ngIf="isLoading"></shared-loading-spinner> -->
+    <business-data-table></business-data-table>
+  </div>
+</div>

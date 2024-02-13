@@ -1,0 +1,43 @@
+<div *ngIf="personas.length == 0; else table" class="alert alert-warning text-center">
+  No hay aportantes para mostrar
+</div>
+
+
+
+<ng-template #table>
+  <table class="table table-hover text-center">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Nombres</th>
+        <th>Apellidos</th>
+        <th>DNI</th>
+        <th>Email</th>
+        <th>Celular</th>
+        <th>Acciones</th>
+        <th>Información</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let persona of personas; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ persona.nombre }}</td>
+        <td>{{ persona.apellidoPaterno }} {{persona.apellidoMaterno}}</td>
+        <td>{{ persona.identificacion }}</td>
+        <td>{{ persona.email }}</td>
+        <td>{{ persona.celular }}</td>
+        <td>
+          <div class="container text-center">
+            <div class="row align-items-start">
+                <button type="button" class="btn btn-secundary col"><span id="button-trash" class="bi bi-trash"></span></button>
+                <button type="button" class="btn btn-secundary col"><span id="button-edit" class="bi bi-pencil-square"></span></button>
+
+            </div>
+
+          </div>
+        </td>
+        <td><a href="#">Ver</a></td>
+      </tr>
+    </tbody>
+  </table>
+</ng-template>
